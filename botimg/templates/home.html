@@ -50,6 +50,12 @@
         p {
             text-align: center;
         }
+
+        .sad {
+            max-width: 400px;
+            max-height: 400px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +74,10 @@
         {% for url in pictures %}
         <li>
             <img src="{{url}}">
+        </li>
+        {% else %}
+        <li>
+            <img class="sad" src="https://pbs.twimg.com/profile_images/614522112187838464/G02rgtgH.jpg">
         </li>
         {% endfor %}
     </ul>
