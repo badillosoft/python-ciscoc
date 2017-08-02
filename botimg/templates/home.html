@@ -43,16 +43,22 @@
             display: block;
             float: left;
             margin: 10px; 
+            max-height: 100px;
+            max-width: 100%;
+        }
+
+        p {
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <h1>BotimG</h1>
-    <form>
+    <form action="http://localhost:5000/" method="GET">
         <div>
             <img class="bot-img" src="https://foro.hackxcrack.net/index.php?action=dlattach;attach=3441;type=avatar" alt="">
         </div>
-        <input type="text" placeholder="Escribe algo...">
+        <input id="q" name="q" type="text" placeholder="Escribe algo...">
         <input type="submit" value="enviar">
     </form>
 
