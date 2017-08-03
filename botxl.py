@@ -15,13 +15,13 @@ def extract_dep(wb_name, ws_name, range_labels, range_data):
     def T(cell):
         return cell.value
     labels = map(T, ws[range_labels][0])
-    personas = []
+    data = []
     for row in ws[range_data]:
         row_t = map(T, row)
         D = zip(labels, row_t)
         d = {}
         for k, v in D:
             d[k] = v
-        personas.append(d)
+        data.append(d)
     wb.close()
-    return personas
+    return data
