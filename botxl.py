@@ -1,7 +1,7 @@
 from openpyxl import load_workbook
 
 def extract(wb_name, ws_name, range_labels, range_data):
-    wb = load_workbook(wb_name)
+    wb = load_workbook(wb_name, data_only=True)
     ws = wb[ws_name]
     labels = map(lambda cell: cell.value, ws[range_labels][0])
     data = [dict(zip(labels, map(lambda cell: cell.value, row))) \
@@ -10,7 +10,7 @@ def extract(wb_name, ws_name, range_labels, range_data):
     return data
 
 def extract_dep(wb_name, ws_name, range_labels, range_data):
-    wb = load_workbook(wb_name)
+    wb = load_workbook(wb_name, data_only=True)
     ws = wb[ws_name]
     def T(cell):
         return cell.value
