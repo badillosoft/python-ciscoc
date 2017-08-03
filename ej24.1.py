@@ -8,10 +8,7 @@ personas = bot.extract("datos.xlsx", "Hoja2", "B5:E5", "B7:E13")
 # que representa a una sola persona y devuelve el valor en su
 # clave "Nombre"
 
-def T(d):
-    return d["Nombre"]
-
-nombres = map(T, personas)
+nombres = bot.column(personas, "Nombre")
 
 print nombres
 

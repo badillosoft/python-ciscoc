@@ -25,3 +25,11 @@ def extract_dep(wb_name, ws_name, range_labels, range_data):
         data.append(d)
     wb.close()
     return data
+
+def column(data, label):
+    return map(lambda d: d[label], data)
+
+def column_dep(data, label):
+    def T(d):
+        return d[label]
+    return map(T, data)
