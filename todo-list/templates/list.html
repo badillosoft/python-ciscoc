@@ -13,10 +13,11 @@
         <ul>
             {% for task in tasks %}
             <li>
-                <p>{{task.description}} 
-                    {% if task.complete %}🚫
-                    {% else %} ✅
+                <p>
+                    {% if task.complete %} ✅
+                    {% else %} 🚫
                     {% endif %}
+                    {{task.description}} 
                 </p>
             </li>
             {% endfor %}
