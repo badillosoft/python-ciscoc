@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TODO LIST v1.0</title>
+    </head>
+    <body>
+        <h1>TODO LIST 🍺 😁😁😁</h1>
+        <form action="">
+            <input type="text" placeholder="Escribe una tarea">
+            <input type="submit" value="enviar">
+        </form>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <p>{{task.description}} 
+                    {% if task.complete %}🚫
+                    {% else %} ✅
+                    {% endif %}
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

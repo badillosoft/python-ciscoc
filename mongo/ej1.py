@@ -14,7 +14,7 @@ db.personas.insert_one({
 db.personas.insert_many([
     {
         "nombre": "Persona 1",
-        "edad": 15,
+        "edad": 21,
     },
     {
         "nombre": "Persona 2",
