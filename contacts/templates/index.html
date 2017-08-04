@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contacts Manager v1.0</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #226688;
+        }
+
+        label {
+            color: #226688;
+        }
+
+        .container {
+            margin-top: 50px;
+            width: 400px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            float: right;
+            width: 100px;
+            margin-top: 10px;
+            margin-right: -23px;
+            height: 50px;
+            border: 2px solid #2266bb;
+            background-color: #2266FF;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contacts Manager 📙</h1>
+    <div class="container">
+        <form action="/">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="full name">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="email">
+            <label for="picture">Picture</label>
+            <input id="picture" name="picture" type="text" placeholder="url picture">
+            <input type="submit" value="enviar">
+        </form>
+    </div>
+    <ul>
+        {% for contact in contacts %}
+        <li>
+            <div class="contact">
+                <img src="{{contact.picture}}">
+                <p>{{contact.name}}</p>
+                <p>✉️ {{contact.email}}</p>
+                <div class="options">
+                    ❌ ✏️
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
