@@ -1,20 +1,10 @@
 from flask import Flask, render_template
+import bot
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    tasks = [
-        {
-            "description": "Ir al cine",
-            "complete": True
-        },
-        {
-            "description": "Hacer el proyecto :(",
-            "complete": False
-        }
-    ]
-
-    return render_template("list.html", tasks=tasks)
+    return render_template("list.html", tasks=bot.get_tasks())
 
 app.run()
